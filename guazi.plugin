@@ -1,0 +1,38 @@
+#!name = 瓜子影视净化
+#!desc = 瓜子影视去广告
+#!author = 怎么肥事
+
+[Script]
+http-response ^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Resource/Config/getNav script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, tag=瓜子影视getNav
+
+http-response ^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/barsPlayAdInfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, tag=瓜子影视barsPlayAd
+
+http-response ^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/playAdInfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, tag=瓜子影视playAd
+
+http-response ^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/IndexPlay/vodAdvertisement script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, tag=瓜子影视vodAd
+
+http-response ^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Resource/Vod/showOne script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, tag=瓜子影视showOne
+
+http-response ^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Resource/Vod/vurlDetail script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, tag=瓜子影视vurlDetail
+
+[Rule]
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/splashInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/noticeInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/IndexList/homeFloatAd,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/activityInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/skitAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/countPopTotal,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/barsUserAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/ad/config,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/vajraInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/bannerInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/bardCacheAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/barsIndexAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/comicAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/liveEventAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/novelAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Ad/sportAdInfo,REJECT
+URL-REGEX,^https?://api\.(ainitpz|4hnovel|1000gxf)\.com/App/Resource/CommentAd/show,REJECT
+
+[MITM]
+hostname = api.ainitpz.com, api.4hnovel.com, api.1000gxf.com
