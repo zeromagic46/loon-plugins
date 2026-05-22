@@ -4,7 +4,6 @@
 
 [Script]
 http-response ^https?://apidd\.thucul\.com/api/v1/startup script-path=https://raw.githubusercontent.com/zeromagic46/loon-plugins/main/javdb_startup.js, requires-body=true, tag=JavDB去启动广告
-
 http-response ^https?://apidd\.thucul\.com/api/v1/ads script-path=https://raw.githubusercontent.com/zeromagic46/loon-plugins/main/javdb_ads.js, requires-body=true, tag=JavDB去广告
 
 [MITM]
