@@ -6,3 +6,5 @@ URL-REGEX,^https?://ad-api\.adn-plus\.com\.cn,REJECT
 URL-REGEX,^https?://ssp\.maplehaze\.cn,REJECT
 URL-REGEX,^https?://adx-track\.adn-plus\.com\.cn,REJECT
 URL-REGEX,^https?://ssp-track\.adn-plus\.com\.cn,REJECT
+URL-REGEX,^https?://.*miguvideo\.com,REJECT
+URL-REGEX,^https?://uem\.migu\.cn,REJECT
