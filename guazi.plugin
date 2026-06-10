@@ -1,25 +1,13 @@
 #!name = 瓜子影视净化
-#!desc = 瓜子影视去广告
+#!desc = 瓜子影视去广告（通配符版）
 #!author = zeromagic46
 
 [Rule]
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/splashInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/noticeInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/IndexList/homeFloatAd,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/activityInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/skitAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/countPopTotal,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/barsUserAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/ad/config,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/vajraInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/bannerInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/bardCacheAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/barsIndexAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/comicAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/liveEventAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/novelAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/sportAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Resource/CommentAd/show,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/barsPlayAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/Ad/playAdInfo,REJECT
-URL-REGEX,^https?://apinew\.fzmfbdmg\.com/App/IndexPlay/vodAdvertisement,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/[Aa]d/barsIndexAdInfo,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/[Aa]d/splashInfo,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/[Aa]d/vajraInfo,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/[Aa]d/config,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/[Aa]d/activityInfo,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/[Aa]d/skitAdInfo,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/IndexList/homeFloatAd,REJECT
+URL-REGEX,^https?://(api|apinew|gzapi|jk)\..+\.com/App/Resource/CommentAd,REJECT
