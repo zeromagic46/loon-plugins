@@ -1,10 +1,16 @@
-#!name = JavDB 去广告
-#!desc = 去除 JavDB 启动广告及页面广告
-#!icon = https://jav.app/img/logo.5a6a7422.png
+#!name=JavDB去广告
+#!desc=屏蔽开屏广告和页内广告图
+
+[Rewrite]
+^https:\/\/tp\.spfcas\.com\/[^/]+\/ads\/ reject-img
+^https:\/\/jdforrepam\.com\/api\/v1\/ads reject-dict
+
+[Script]
+http-response-jq ^https:\/\/jdforrepam\.com\/api\/v1\/startup '.data.splash_ad.enabled = false' requires-body=true, tag=JavDB开屏
 
 [Rule]
-URL-REGEX,^https?://apidd\.thucul\.com/api/v1/ads,REJECT
-URL-REGEX,^https?://apidd\.thucul\.com/api/v1/startup,REJECT
+DOMAIN-SUFFIX,zenaruk.com,REJECT
+DOMAIN-SUFFIX,jopeki.com,REJECT
 
-[MITM]
-hostname = apidd.thucul.com
+[MitM]
+hostname = jdforrepam.com, tp.spfcas.com
