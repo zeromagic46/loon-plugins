@@ -1,12 +1,15 @@
 #!name=JavDB去广告
 #!desc=屏蔽开屏广告和页内广告图
+#!author=zeromagic46
+#!homepage=https://github.com/zeromagic46/loon-plugins
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
 
 [Rewrite]
 ^https:\/\/tp\.spfcas\.com\/[^/]+\/ads\/ reject-img
 ^https:\/\/jdforrepam\.com\/api\/v1\/ads reject-dict
 
 [Script]
-http-response-jq ^https:\/\/jdforrepam\.com\/api\/v1\/startup '.data.splash_ad.enabled = false' requires-body=true, tag=JavDB开屏
+http-response-jq ^https:\/\/jdforrepam\.com\/api\/v1\/startup '.data.splash_ad = {"enabled": false, "overtime": 0, "ad": null}' requires-body=true, tag=JavDB开屏
 
 [Rule]
 DOMAIN-SUFFIX,zenaruk.com,REJECT
