@@ -1,5 +1,5 @@
 #!name=JavDB去广告
-#!desc=屏蔽开屏广告和页内广告图
+#!desc=屏蔽开屏广告图和页内广告位
 #!author=zeromagic46
 #!homepage=https://github.com/zeromagic46/loon-plugins
 #!icon=https://c0.jdbstatic.com/images/logo_120x120.png
@@ -7,10 +7,7 @@
 [Rewrite]
 ^https:\/\/tp\.spfcas\.com\/[^/]+\/ads\/ reject-img
 ^https:\/\/apidd\.spthgb\.com\/api\/v1\/ads reject-dict
-
-[Script]
-#http-request ^https:\/\/apidd\.spthgb\.com\/api\/v1\/ads script-path=https://raw.githubusercontent.com/zeromagic46/loon-plugins/main/javdb-ads.js, timeout=10, tag=JavDB广告位
-#http-response ^https:\/\/apidd\.spthgb\.com\/api\/v1\/startup script-path=https://raw.githubusercontent.com/zeromagic46/loon-plugins/main/javdb-startup.js, requires-body=true, timeout=10, tag=JavDB开屏
+^https:\/\/jdforrepam\.com\/api\/v1\/ads reject-dict
 
 [Rule]
 DOMAIN-SUFFIX,zenaruk.com,REJECT
