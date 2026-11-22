@@ -1,3 +1,4 @@
+console.log("[JavDB] /ads 请求命中，返回空广告");
 $done({
   response: {
     status: 200,
