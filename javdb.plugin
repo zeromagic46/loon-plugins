@@ -1,5 +1,5 @@
 #!name=JavDB去广告
-#!desc=屏蔽开屏广告图和页内广告位
+#!desc=屏蔽开屏广告图、倒计时配置和页内广告位
 #!author=zeromagic46
 #!homepage=https://github.com/zeromagic46/loon-plugins
 #!icon=https://c0.jdbstatic.com/images/logo_120x120.png
@@ -8,6 +8,9 @@
 ^https:\/\/tp\.spfcas\.com\/[^/]+\/ads\/ reject-img
 ^https:\/\/apidd\.spthgb\.com\/api\/v1\/ads reject-dict
 ^https:\/\/jdforrepam\.com\/api\/v1\/ads reject-dict
+
+[Script]
+http-response ^https:\/\/apidd\.spthgb\.com\/api\/v\d+\/startup script-path=https://raw.githubusercontent.com/zeromagic46/loon-plugins/main/javdb_startup.js, requires-body=true, tag=JavDB开屏配置拦截
 
 [Rule]
 DOMAIN-SUFFIX,zenaruk.com,REJECT
